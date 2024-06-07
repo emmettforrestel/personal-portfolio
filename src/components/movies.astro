@@ -1,0 +1,91 @@
+---
+import Aurora from "/AuroraBorealis.jpeg";
+import LightColor from "/LightAndColor.jpeg";
+import Darial from "/DarialGorge.jpeg";
+import RainSteamSpeed from "RainSteamSpeed.jpeg";
+import type MainLayout from "../layouts/MainLayout.astro";
+---
+
+<div class="mx-12">
+  <h1 class="my-12 text-center text-xl font-bold">My Favorite Movies </h1>
+  <div class="grid grid-cols-1 gap-24 xl: mx-48 xl:grid-cols-2">
+    <div class="flex flex-col items-center justify-center">
+        <h1 class="my-12 text-center text-l">
+            David Fincher's <span class="italic"> Fight Club</span>
+          </h1>
+    <div class="relative group flex justify-center items-center">
+      <img
+        class="relative z-10 w-3/4 rounded-xl transition-all group-hover:-translate-x-3"
+        src="/FightClub.png"
+        alt="FC"
+      />
+      <div
+        class="absolute left-15 top-0 group-hover:translate-x-4 w-3/4 h-full bg-black rounded-xl"
+      >
+      </div>
+    </div>
+    <h2 class="text-center my-10">I saw this the summer before my senior year of highschool on request of my friend. It's still my favorite.</h2>
+    </div>
+
+    <div class="flex flex-col items-center justify-center">
+      <h1 class="my-12 text-center text-l">
+        Cohen Brothers' <span class="italic">No Country For Old Men</span>
+      </h1>
+      <div class="relative group flex justify-center items-center">
+        <img
+          class="relative z-10 w-2/3 rounded-xl transition-all group-hover:-translate-x-3"
+          src="/NoCountry.png"
+          alt="NC"
+        />
+        <div
+          class="absolute left-15 top-0 group-hover:translate-x-4 w-2/3 h-full bg-black rounded-xl"
+        >
+        </div>
+      </div>
+      <h2 class="text-center my-10">I saw this my junior year of highschool with my dad; we were both stunned.</h2>
+    </div>
+    <div class="flex flex-col items-center justify-center">
+        <h1 class="my-12 text-center text-l">
+             Tarrantino's <span class="italic">Inglorious Basterds</span>
+          </h1>
+    <div class="relative group flex justify-center items-center">
+      <img
+        class="relative z-10 w-2/3 rounded-xl transition-all group-hover:-translate-x-3"
+        src="/IngloriousBasterds.png"
+        alt="IB"
+      />
+      <div
+        class="absolute left-15 top-0 group-hover:translate-x-4 w-2/3 h-full bg-black rounded-xl"
+        >
+      </div>
+    </div>
+    <h2 class="text-center my-10">After I saw it at the start of my junior year, it was my favorite for quite a while. No movie has more style.</h2>
+    </div>
+
+    <div class="flex flex-col items-center justify-center">
+        <h1 class="my-12 text-center text-l">
+            PTA's <span class="italic">There Will Be Blood</span>
+        </h1>
+          <div class="relative group flex justify-center items-center">
+            <img
+              class="relative z-10 w-1/2 rounded-xl transition-all group-hover:-translate-x-3"
+              src="/ThereWilBeBlood.png"
+              alt="CandP"
+            />
+            <div
+              class="absolute left-15 top-0 group-hover:translate-x-4 w-1/2 h-full bg-black rounded-xl"
+            >
+            </div>
+          </div>
+          <h2 class="text-center my-10">I saw this movie the summer before my junior year. I've appreciated it much more with time.</h2>
+    </div>
+  </div>
+</div>
+<div class="mt-12 h-6 w-full bg-black"></div>
+
+<style>
+  .caption {
+    text-align: left;
+    font-size: x-large;
+  }
+</style>

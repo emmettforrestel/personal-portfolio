@@ -1,0 +1,20 @@
+---
+import Nav from "../components/Nav"
+const {title} = Astro.props;
+---
+
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Emmett Forrestel" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta title={title}/>
+	</head>
+	<body>
+		<main>
+			<Nav client:load/>
+			<slot/>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,125 @@
+---
+import portrait from "/portrait.jpg";
+import paint from "/paint.jpeg";
+---
+
+<div
+  class="relative mx-12 flex flex-col items-center justify-center xl:flex-row xl:gap-36"
+>
+  <div class="w-full xl:w-1/2">
+    <h1 class="big-text">
+      <span id="scribble" class="font-bold"> Welcome!</span>
+    </h1>
+    <div class="relative">
+      <svg class="absolute h-full w-full overflow-visible">
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop
+              offset="0%"
+              style={{ stopColor: "#DC3A2B", stopOpacity: "50%" }}></stop>
+            <stop
+              offset="100%"
+              style={{ stopColor: "#FF073A", stopOpacity: "80%" }}></stop>
+          </linearGradient>
+        </defs>
+        <path
+          id="border-path"
+          fill="none"
+          stroke="url(#gradient)"
+          stroke-width="4"
+        >
+        </path>
+      </svg>
+
+      <p id="anim-p" class="p-6 text-lg">
+        This is <span class="font-bold text-primary"> Emmett's </span>personal Porfolio.<br/> <br />
+        Discover my diverse intersts: from coding creations, to athletic pursuits, my favorite classical muisc, books, and paintings. 
+        I hope to demonstate my ability across many facets of human endeavour. <br /><br />
+        Enjoy! And, look at that cool picture.
+      </p>
+    </div>
+    <div class="flex justify-center pt-12 text-center mb-12 xl:gap-16">
+      <div class="w-32">
+        <h2>Coding Projects</h2>
+        <p id="coding-projects" class="text-xl font-bold">1</p>
+      </div>
+      <div class="w-32">
+        <h2>Book Counter</h2>
+        <p id="book-counter" class="text-xl font-bold">10</p>
+      </div>
+      <div class="w-32">
+        <h2>Songs Learned</h2>
+        <p id="songs-learned" class="text-xl font-bold">4</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative">
+    <img src="/portrait.jpg" class="h-half" alt="ProfilePicture" />
+    <div class="absolute bottom-5 right-0 translate-y-1/4">
+      <img src="/paint.svg" alt="RedBars" />
+    </div>
+  </div>
+</div>
+<div class="mt-12 h-6 w-full bg-black"></div>
+
+<style>
+  #border-path {
+    animation: draw 1s forwards 1s ease-out;
+  }
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  .h-half {
+    height: 400px;
+    border-radius: 40px;
+  }
+  .big-text{
+    font-size: 4rem;
+  }
+</style>
+
+<script>
+  function updatePath() {
+    const textMain = document.querySelector("#anim-p") as HTMLElement;
+    const path = document.querySelector("#border-path") as SVGPathElement;
+
+    if (textMain && path) {
+      path.setAttribute(
+        "d",
+        `M0,0 V${textMain.offsetHeight} H${textMain.offsetWidth} v${textMain.offsetHeight / 2}`
+      );
+    }
+    const pathLength = path.getTotalLength();
+    path.style.strokeDasharray = pathLength.toString();
+    path.style.strokeDashoffset = pathLength.toString();
+  }
+  function incrementCounter(
+    selector: string,
+    current: number,
+    target: number,
+    duration: number,
+    letter: string = ""
+  ) {
+    let counter = document.getElementById(selector);
+    let stepTime = Math.abs(Math.floor(duration / target));
+    if (current < target && counter) {
+      current++;
+      counter.innerText = current.toString() + letter;
+      setTimeout(
+        () => incrementCounter(selector, current, target, duration, letter),
+        stepTime
+      );
+    }
+  }
+
+  //Increment
+  incrementCounter("book-counter", 0, 117, 1000);
+  incrementCounter("songs-learned", 0, 13, 1000);
+  incrementCounter("coding-projects", 0, 7, 1000);
+
+  window.addEventListener("DOMContentLoaded", updatePath);
+  window.addEventListener("resize", updatePath);
+</script>

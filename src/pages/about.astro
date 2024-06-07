@@ -1,0 +1,19 @@
+---
+import Gallery from "../components/Gallery.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import Books from "../components/Books.astro";
+import Songs from "../components/Songs.astro";
+import Movies from "../components/movies.astro"
+---
+
+<MainLayout title = "About Page">
+    <div class="mx-12">
+        <h1 class="my-24 text-center text-xl">Below is a list of my compilation of my favorite songs, books, movies, and paintings.</h1>
+    </div>
+    <Songs/>
+    <Books/>
+    <Gallery/>
+    <Movies/>
+</MainLayout>
+
+

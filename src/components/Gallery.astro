@@ -1,0 +1,85 @@
+---
+import Aurora from "/AuroraBorealis.jpeg";
+import LightColor from "/LightAndColor.jpeg";
+import Darial from "/DarialGorge.jpeg";
+import RainSteamSpeed from "RainSteamSpeed.jpeg";
+import type MainLayout from "../layouts/MainLayout.astro";
+---
+
+<div class="mx-12">
+  <h1 class="my-12 text-center text-xl font-bold">My Favorite Art Pieces</h1>
+  <div class="grid grid-cols-1 gap-24 xl: mx-48 xl:grid-cols-2">
+    <div class="flex flex-col items-center justify-center">
+        <h1 class="my-12 text-center text-l">
+            Ship At Sunset, 1863, <span class="font-bold">Frederich Edwin Church</span>
+          </h1>
+          <div class="relative group flex justify-center items-center">
+            <img
+              class="relative z-10 w-full rounded-xl transition-all group-hover:-translate-x-3"
+              src="/ShipAtSunset.jpg"
+              alt="ShipAtSunset"
+            />
+            <div
+              class="absolute left-15 top-0 group-hover:translate-x-4 w-full h-full bg-black rounded-xl"
+            >
+            </div>
+          </div>
+    </div>
+
+    <div class="flex flex-col items-center justify-center">
+      <h1 class="my-12 text-center text-l">
+        Light and Colour, 1843, <span class="font-bold">J.M.W Turner</span>
+      </h1>
+      <div class="relative group flex justify-center items-center">
+        <img
+          class="relative z-10 w-2/3 rounded-xl transition-all group-hover:-translate-x-3"
+          src="/LightAndColor.jpeg"
+          alt="LightAndColor"
+        />
+        <div
+          class="absolute left-15 top-0 group-hover:translate-x-4 w-2/3 h-full bg-black rounded-xl"
+        >
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col items-center justify-center">
+        <h1 class="my-12 text-center text-l">
+            Rain, Steam, and Speed-The Great Western Railway, 1844, <span class="font-bold">J.M.W Turner</span>
+          </h1>
+    <div class="relative group flex justify-center items-center">
+      <img
+        class="relative z-10 w-full rounded-xl transition-all group-hover:-translate-x-3"
+        src="/RainSteamSpeed.jpeg"
+        alt="RainSteam"
+      />
+      <div
+        class="absolute left-15 top-0 group-hover:translate-x-4 w-full h-full bg-black rounded-xl"
+      >
+      </div>
+    </div>
+    </div>
+    <div class="flex flex-col items-center justify-center">
+        <h1 class="my-12 text-center text-l">
+            Darial Gorge, 1862,<span class="font-bold"> Ivan Aivazovsky</span>
+          </h1>
+    <div class="relative group flex justify-center items-center">
+      <img
+        class="relative z-10 w-3/4 rounded-xl transition-all group-hover:-translate-x-3"
+        src="/DarialGorge.jpeg"
+        alt="Darial"
+      />
+      <div
+        class="absolute left-15 top-0 group-hover:translate-x-4 w-3/4 h-full bg-black rounded-xl"
+      >
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="mt-12 h-6 w-full bg-black"></div>
+<style>
+  .caption {
+    text-align: left;
+    font-size: x-large;
+  }
+</style>
