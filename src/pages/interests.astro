@@ -1,0 +1,52 @@
+---
+import "../styles/fonts.css";
+import "../styles/global.css";
+import Gallery from "../components/Gallery.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import Books from "../components/Books.astro";
+import Songs from "../components/Songs.astro";
+import Movies from "../components/movies.astro";
+---
+
+<MainLayout title="About Page">
+  <div class="relative">
+      <div class="mx-12">
+        <h1 id="anim-p" class="my-24 text-center text-xl">
+          Below is a list of my compilation of my favorite songs, books, movies,
+          and paintings.
+        </h1>
+      </div>
+  </div>
+  <Books />
+  <Songs />
+</MainLayout>
+
+<style>
+  #border-path {
+    animation: draw 1s forwards 1s ease-out;
+  }
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+</style>
+
+<script>
+  function updatePath() {
+    const textMain = document.querySelector("#anim-p") as HTMLElement;
+    const path = document.querySelector("#border-path") as SVGPathElement;
+
+    if (textMain && path) {
+      path.setAttribute(
+        "d",
+        `M0,0 V${textMain.offsetHeight} H${textMain.offsetWidth } v${textMain.offsetHeight}`
+      );
+    }
+    const pathLength = path.getTotalLength();
+    path.style.strokeDasharray = pathLength.toString();
+    path.style.strokeDashoffset = pathLength.toString();
+  }
+  window.addEventListener("DOMContentLoaded", updatePath);
+  window.addEventListener("resize", updatePath);
+</script>

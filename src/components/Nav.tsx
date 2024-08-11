@@ -45,15 +45,15 @@ export default function Nav() {
       {/* Title */}
 
       <h1 className="text-lg font-bold absolute bottom-10 left-1/2 -translate-x-1/2">
-        <a href="/">Emmett.</a>
+        <a href="/" className="text-black">Emmett</a>
       </h1>
 
       {/* {Check if we're on mobile or not} */}
       {matches && (
         <div className="flex gap-12">
-          <a href="/">Home</a>
-          <a href="../about">About</a>
-          <a href="../contact">Contact</a>
+          <a href="/" className="text-black">Home</a>
+          <a href="../about" className="text-black">About</a>
+          <a href="../interests" className="text-black">Interests</a>
         </div>
       )}
 
@@ -89,13 +89,13 @@ export default function Nav() {
             initial="hidden"
             className="flex flex-col gap-24 text-lg"
           >
-            <motion.a variants={itemMotion} href="/">
+            <motion.a variants={itemMotion} className="text-black" href="/">
               Home
             </motion.a>
-            <motion.a variants={itemMotion} href="../about">
-              About
+            <motion.a variants={itemMotion} className="text-black" href="../interests">
+              Interests
             </motion.a>
-            <motion.a variants={itemMotion} href="../pages/contact">
+            <motion.a variants={itemMotion} className="text-black" href="../pages/contact">
               Contact
             </motion.a>
           </motion.div>

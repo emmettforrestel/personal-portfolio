@@ -1,4 +1,6 @@
 ---
+import "../styles/fonts.css";
+import "../styles/global.css";
 import portrait from "/portrait.jpg";
 import paint from "/paint.jpeg";
 ---
@@ -38,24 +40,10 @@ import paint from "/paint.jpeg";
         Enjoy! And, look at that cool picture.
       </p>
     </div>
-    <div class="flex justify-center pt-12 text-center mb-12 xl:gap-16">
-      <div class="w-32">
-        <h2>Coding Projects</h2>
-        <p id="coding-projects" class="text-xl font-bold">1</p>
-      </div>
-      <div class="w-32">
-        <h2>Book Counter</h2>
-        <p id="book-counter" class="text-xl font-bold">10</p>
-      </div>
-      <div class="w-32">
-        <h2>Songs Learned</h2>
-        <p id="songs-learned" class="text-xl font-bold">4</p>
-      </div>
-    </div>
   </div>
 
   <div class="relative">
-    <img src="/portrait.jpg" class="h-half" alt="ProfilePicture" />
+    <img src="/portrait.jpg" class="h-half mt-[20px]" alt="ProfilePicture" />
     <div class="absolute bottom-5 right-0 translate-y-1/4">
       <img src="/paint.svg" alt="RedBars" />
     </div>
@@ -73,7 +61,7 @@ import paint from "/paint.jpeg";
     }
   }
   .h-half {
-    height: 400px;
+    width: 40vw;
     border-radius: 40px;
   }
   .big-text{
@@ -115,10 +103,6 @@ import paint from "/paint.jpeg";
     }
   }
 
-  //Increment
-  incrementCounter("book-counter", 0, 117, 1000);
-  incrementCounter("songs-learned", 0, 13, 1000);
-  incrementCounter("coding-projects", 0, 7, 1000);
 
   window.addEventListener("DOMContentLoaded", updatePath);
   window.addEventListener("resize", updatePath);
