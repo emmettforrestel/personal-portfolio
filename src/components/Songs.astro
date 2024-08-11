@@ -3,77 +3,104 @@ import type MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <div class="mx-12">
-  <h1 class="my-12 text-center text-xl font-bold">My Favorite Albums </h1>
-  <div class="grid grid-cols-1 gap-24 xl: mx-48 xl:grid-cols-2">
+  <h1 class="my-12 text-center text-xl font-bold">My Favorite Albums</h1>
+  <div class="grid grid-cols-2 gap-12">
     <div class="flex flex-col items-center justify-center">
-        <h1 class="my-12 text-center text-l">
-            Alfred Cortot's <span class="italic"> Chopin Collection</span>
-          </h1>
-    <div class="relative group flex justify-center items-center">
-      <img
-        class="relative z-10 w-full rounded-xl transition-all group-hover:-translate-x-3"
-        src="/Cortot.png"
-        alt="Cortot"
-      />
-      <div
-        class="absolute left-15 top-0 group-hover:translate-x-4 w-full h-full bg-black rounded-xl"
-      >
+      <h2 class="my-12 text-center text-l">
+        Alfred Cortot's <span class="italic"> Chopin Collection</span>
+      </h2>
+      <div class="relative group flex justify-center items-center">
+        <img
+          class="relative z-10 w-1/2 rounded-xl transition-all group-hover:-translate-x-3"
+          src="/Cortot.png"
+          alt="Cortot"
+        />
+        <div
+          class="absolute left-15 top-0 group-hover:translate-x-4 w-1/2 h-full bg-black rounded-xl"
+        >
+        </div>
       </div>
     </div>
-    <h2 class="text-center my-10">Cortot is nothing short of the greatest Chopin interpreter of all time. This proves it.</h2>
+    <div class="flex flex-col items-center justify-center">
+      <h2 class="my-12 text-center text-l">
+        Alexander Scriabin's <span class="italic">Complete Works</span>
+      </h2>
+      <div class="relative group flex justify-center items-center">
+        <img
+          class="relative z-10 w-1/2 rounded-xl transition-all group-hover:-translate-x-3"
+          src="/Scriabin.jpg"
+          alt="Scriabin"
+        />
+        <div
+          class="absolute left-15 top-0 group-hover:translate-x-4 w-1/2 h-full bg-black rounded-xl"
+        >
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col items-center justify-center">
+      <h2 class="my-12 text-center text-l">
+        Arthur Rubenstein's <span class="italic">Liszt Album</span>
+      </h2>
+      <div class="relative group flex justify-center items-center">
+        <img
+          class="relative z-10 w-1/2 rounded-xl transition-all group-hover:-translate-x-3"
+          src="/Lizst.jpg"
+          alt="Liszt"
+        />
+        <div
+          class="absolute left-15 top-0 group-hover:translate-x-4 w-1/2 h-full bg-black rounded-xl"
+        >
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col items-center justify-center">
+      <h2 class="my-12 text-center text-l">
+        Sergei Rachmaninov's <span class="italic">Ampico Recordings</span>
+      </h2>
+      <div class="relative group flex justify-center items-center">
+        <img
+          class="relative z-10 w-1/2 rounded-xl transition-all group-hover:-translate-x-3"
+          src="/Rach.png"
+          alt="Rach"
+        />
+        <div
+          class="absolute left-15 top-0 group-hover:translate-x-4 w-1/2 h-full bg-black rounded-xl"
+        >
+        </div>
+      </div>
     </div>
 
     <div class="flex flex-col items-center justify-center">
-      <h1 class="my-12 text-center text-l">
+      <h2 class="my-12 text-center text-l">
         Nanci Griffith's <span class="italic"> One Fair Summer Evening</span>
-      </h1>
+      </h2>
       <div class="relative group flex justify-center items-center">
         <img
-          class="relative z-10 w-full rounded-xl transition-all group-hover:-translate-x-3"
+          class="relative z-10 w-1/2 rounded-xl transition-all group-hover:-translate-x-3"
           src="/Nanci.png"
           alt="Nanci"
         />
         <div
-          class="absolute left-15 top-0 group-hover:translate-x-4 w-full h-full bg-black rounded-xl"
+          class="absolute left-15 top-0 group-hover:translate-x-4 w-1/2 h-full bg-black rounded-xl"
         >
         </div>
       </div>
-      <h2 class="text-center my-10">I inherited my love of this album from my mom, who met her in the late 90's. Every song on this is incredible.</h2>
     </div>
     <div class="flex flex-col items-center justify-center">
-        <h1 class="my-12 text-center text-l">
-            Frank Sinatra's <span class="italic">Nothing But The Best</span>
-          </h1>
-    <div class="relative group flex justify-center items-center">
-      <img
-        class="relative z-10 w-full rounded-xl transition-all group-hover:-translate-x-3"
-        src="/Sinatra.png"
-        alt="Sinatra"
-      />
-      <div
-        class="absolute left-15 top-0 group-hover:translate-x-4 w-full h-full bg-black rounded-xl"
-      >
+      <h2 class="my-12 text-center text-l">
+        Frank Sinatra's <span class="italic">Nothing But The Best</span>
+      </h2>
+      <div class="relative group flex justify-center items-center">
+        <img
+          class="relative z-10 w-1/2 rounded-xl transition-all group-hover:-translate-x-3"
+          src="/Sinatra.png"
+          alt="Sinatra"
+        />
+        <div
+          class="absolute left-15 top-0 group-hover:translate-x-4 w-1/2 h-full bg-black rounded-xl"
+        >
+        </div>
       </div>
-    </div>
-    <h2 class="text-center my-10"> "My Way" played at my paternal grandfather's funeral and its been my favoirte song since that day.</h2>
-    </div>
-
-    <div class="flex flex-col items-center justify-center">
-        <h1 class="my-12 text-center text-l">
-            Sergei Rachmaninov's <span class="italic">Ampico Recordings</span>
-          </h1>
-          <div class="relative group flex justify-center items-center">
-            <img
-              class="relative z-10 w-full rounded-xl transition-all group-hover:-translate-x-3"
-              src="/Rach.png"
-              alt="Rach"
-            />
-            <div
-              class="absolute left-15 top-0 group-hover:translate-x-4 w-full h-full bg-black rounded-xl"
-            >
-            </div>
-          </div>
-          <h2 class="text-center my-10">This is the greatest pianist of all time playing his own music.</h2>
     </div>
   </div>
 </div>

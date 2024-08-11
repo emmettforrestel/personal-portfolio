@@ -1,0 +1,34 @@
+---
+import "../styles/fonts.css";
+import "../styles/global.css";
+import Nav from "../components/Nav";
+import MainLayout from "../layouts/MainLayout.astro";
+import Intro from "../components/Intro.astro";
+---
+
+<MainLayout title="Emmett Forrestel Portfolio">
+  <div class="contact-container">
+    <div class="contact-item">
+        <p>Name: <strong>Emmett Forrestel</strong></p>
+    </div>
+    <div class="contact-item">
+        <p>Personal Email: <strong>emmettf811@gmail.com</strong></p>
+    </div>
+    <div class="contact-item">
+        <p>School Email: <strong>emmett_forrestel@brown.edu</strong></p>
+    </div>
+
+    <div class="contact-item">
+        <p>Phone: <strong>+1 (716)-420-3890</strong></p>
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+    .contact-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+</style>

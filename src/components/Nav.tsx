@@ -1,3 +1,5 @@
+import "../styles/fonts.css";
+import "../styles/global.css";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useMediaQuery } from "../util/useMediaQuery";
@@ -45,15 +47,15 @@ export default function Nav() {
       {/* Title */}
 
       <h1 className="text-lg font-bold absolute bottom-10 left-1/2 -translate-x-1/2">
-        <a href="/" className="text-black">Emmett</a>
+        <a href="/" className="text-black">Home</a>
       </h1>
 
       {/* {Check if we're on mobile or not} */}
       {matches && (
         <div className="flex gap-12">
           <a href="/" className="text-black">Home</a>
-          <a href="../about" className="text-black">About</a>
           <a href="../interests" className="text-black">Interests</a>
+          <a href="../contact" className="text-black">Contact</a>
         </div>
       )}
 
@@ -95,7 +97,7 @@ export default function Nav() {
             <motion.a variants={itemMotion} className="text-black" href="../interests">
               Interests
             </motion.a>
-            <motion.a variants={itemMotion} className="text-black" href="../pages/contact">
+            <motion.a variants={itemMotion} className="text-black" href="../contact">
               Contact
             </motion.a>
           </motion.div>
