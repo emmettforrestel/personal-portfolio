@@ -9,17 +9,17 @@ import Intro from "../components/Intro.astro";
 <MainLayout title="Emmett Forrestel Portfolio">
   <div class="contact-container">
     <div class="contact-item">
-        <p>Name: <strong>Emmett Forrestel</strong></p>
+        <p>Name: Emmett Forrestel</p>
     </div>
     <div class="contact-item">
-        <p>Personal Email: <strong>emmettf811@gmail.com</strong></p>
+        <p>Personal Email: emmettf811@gmail.com</p>
     </div>
     <div class="contact-item">
-        <p>School Email: <strong>emmett_forrestel@brown.edu</strong></p>
+        <p>School Email: emmett_forrestel@brown.edu</p>
     </div>
 
     <div class="contact-item">
-        <p>Phone: <strong>+1 (716)-420-3890</strong></p>
+        <p>Phone: +1 (716)-420-3890</p>
     </div>
   </div>
 </MainLayout>
@@ -29,6 +29,11 @@ import Intro from "../components/Intro.astro";
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 1rem;
         width: 100%;
+    }
+    .contact-item p{
+        font-size: 1.25rem;
+        font-weight: 400;
     }
 </style>

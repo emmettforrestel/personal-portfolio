@@ -7,6 +7,36 @@ import type MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <div class="mx-6">
+  <div class="total">
+    <h1 class="font-bold mb-6 mt-12">Papers I've Written:</h1>
+    <div class="papers-container">
+      <div class="paper-item" data-id="Paper1">
+        <h2 class="title">Boulders, Burdens, Mountains, and Meaning</h2>
+        <p class="short-desc">Zosima's Happiness in Brothers Karamazov</p>
+      </div>
+      <iframe
+        id="iframe-paper1"
+        class="hidden"
+        style="width: 100%; height: 80vh; border: none;"></iframe>
+      <div class="paper-item" data-id="Paper2">
+        <h2 class="title">Darkness and Despair, Love and Light</h2>
+        <p class="short-desc">
+          Imagery of Light and Darkness in The Brothers Karamazov
+        </p>
+      </div>
+      <iframe
+        id="iframe-paper2"
+        class="hidden"
+        style="width: 100%; height: 80vh; border: none;"></iframe>
+    </div>
+  </div>
+  <div class="performance-container">
+    <h1 class="my-12 text-center font-semibold">Songs I've Recorded:</h1>
+    <iframe
+      id="iframe-video1"
+      style="width: 80%; height: 500px; border: none;"
+      src="https://www.youtube.com/embed/AZ66X7hB8jI"></iframe>
+  </div>
   <h1 class="my-12 text-center font-semibold">My Favorite Books:</h1>
   <div class="flex flex-row">
     <div class="books-col">
@@ -52,184 +82,100 @@ import type MainLayout from "../layouts/MainLayout.astro";
   </div>
 </div>
 
-<div class="total">
-  <h1 class="font-bold mb-6 mt-12">Papers I've Written:</h1>
-  <div class="papers-container">
-    <div class="paper-item" data-id="Paper1">
-      <h2 class="title">Boulders, Burdens, Mountains, and Meaning</h2>
-      <p class="short-desc">Zosima's Happiness in Brothers Karamazov</p>
-    </div>
-    <div class="paper-item" data-id="Paper2">
-      <h2 class="title">Darkness and Despair, Love and Light</h2>
-      <p class="short-desc">
-        Imagery of Light and Darkness in The Brothers Karamazov
-      </p>
-    </div>
-  </div>
-
-  <div id="popup" class="popup hidden">
-    <div class="popup-content">
-      <span class="close" id="close-popup">&times;</span>
-      <h1 id="popup-title" class="popup-title"></h1>
-      <p id="popup-body" class="popup-body"></p>
-      <iframe id="popup-frame" class="popup-frame" src="" frameborder="0"
-      ></iframe>
-    </div>
-  </div>
-</div>
-
 <script>
-  interface Paper {
-    title: string;
-    description: string;
-    file: string;
-  }
-
-  const papers: Record<string, Paper> = {
-    Paper1: {
-      title: "Boulders, Burdens, Mountains, and Meaning",
-      description: "Zosima's Happiness in Brothers Karamazov",
-      file: "/RUSS 0320 Midterm Paper Cleaned.pdf",
-    },
-    Paper2: {
-      title: "Darkness and Despair, Love and Light",
-      description: "Imagery of Light and Darkness in The Brothers Karamazov",
-      file: "/RUSS0320A Final Paper.pdf",
-    },
+  const media = {
+    Paper1:
+      "https://drive.google.com/file/d/1GC8BcAmw3YHF4aZ4t2HfUV1Wz66w2TBT/preview",
+    Paper2:
+      "https://drive.google.com/file/d/1xsupbpAiht3fj-y2sP93OhQPL9EP0c2j/preview",
+    Video1: "https://www.youtube.com/embed/AZ66X7hB8jI",
   };
 
   document.querySelectorAll(".paper-item").forEach((item) => {
     item.addEventListener("click", () => {
-      const paperId = item.getAttribute("data-id") as keyof typeof papers;
-      if (paperId && papers[paperId]) {
-        const paper = papers[paperId];
-        const popupTitleElement = document.getElementById("popup-title");
-        const popupBodyElement = document.getElementById("popup-body");
-        const popupFrameElement = document.getElementById("popup-frame");
-        const popupElement = document.getElementById("popup");
+      const mediaId = item.getAttribute("data-id");
+      const mediaFile = media[mediaId];
+      const iframe = document.getElementById(
+        `iframe-${mediaId.toLowerCase()}`
+      ) as HTMLIFrameElement;
 
-        if (
-          popupTitleElement &&
-          popupBodyElement &&
-          popupFrameElement &&
-          popupElement
-        ) {
-          popupTitleElement.textContent = paper.title;
-          popupBodyElement.textContent = paper.description;
-          //popupFrameElement.src = paper.file;
-          popupElement.classList.remove("hidden");
-          popupElement.style.display = "flex";
+      if (mediaFile && iframe) {
+        if (iframe.classList.contains("hidden")) {
+          // Show the iframe and set the src
+          iframe.src = mediaFile;
+          iframe.classList.remove("hidden");
+
+          // Hide the other iframes
+          document.querySelectorAll("iframe").forEach((frame) => {
+            if (frame !== iframe) {
+              frame.classList.add("hidden");
+              (frame as HTMLIFrameElement).src = ""; // Clear the other iframe's src
+            }
+          });
+        } else {
+          // Hide the iframe if it's already visible
+          iframe.classList.add("hidden");
+          iframe.src = "";
         }
       }
     });
-  });
-
-  document.getElementById("close-popup")?.addEventListener("click", () => {
-    const popupElement = document.getElementById("popup");
-    if (popupElement) {
-      popupElement.classList.add("hidden");
-      popupElement.style.display = "none";
-    }
   });
 </script>
 
 <style>
   .total {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     width: 100%;
   }
+
   .books-col {
     display: flex;
     flex-direction: column;
-    align-items: space-between;
+    align-items: center;
     width: 50%;
+    margin-bottom: 2em;
   }
-  .col-text{
-    padding: 0.5rem 0rem 0.5rem;
+
+  .col-text {
+    padding: 0.5rem 0;
     text-align: center;
   }
 
   .papers-container {
-    display: grid;
-    height: fit-content;
-    grid-template-columns: repeat(auto-fit, 60vw);
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    gap: 2em;
-    padding: 0em 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 90%;
-    color: black;
     margin-bottom: 4em;
   }
 
-  .title {
-    text-align: center;
-    padding-bottom: 0.3em;
-    font-weight: 500;
-  }
-
-  .short-desc {
-    text-align: center;
+  .performance-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .paper-item {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     padding: 1em;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 1em;
     background-color: #f9f9f9;
     border-radius: 8px;
-    cursor: pointer;
     width: 100%;
-    height: auto;
   }
 
-  .popup {
+  .hidden {
     display: none;
-    position: fixed;
-    top: 25px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
   }
 
-  .popup-content {
-    background-color: #fff;
+  iframe {
     width: 80%;
-    padding: 2rem;
-    text-align: left;
-    position: relative;
-  }
-
-  .popup-title {
-    text-align: center;
-  }
-
-  .popup-body {
-    padding-bottom: 1rem;
-  }
-
-  .popup-frame {
-    width: 100%;
-    height: 80vh;
-  }
-
-  .popup.hidden {
-    display: none;
-  }
-
-  .close {
-    position: absolute;
-    top: -5px;
-    right: 20px;
-    cursor: pointer;
-    font-size: 2rem;
+    height: 70vh;
+    border: none;
+    margin-top: 1em;
   }
 </style>
