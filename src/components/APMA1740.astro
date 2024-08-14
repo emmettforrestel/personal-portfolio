@@ -1,0 +1,40 @@
+---
+import "../styles/fonts.css";
+import "../styles/global.css";
+import ProjectHeader from "./projectHeader.astro";
+---
+
+<ProjectHeader
+  title="Gradient Descent Project"
+  subtitle="In my freshman year, Dr. Stuart Geman was my professor in APMA 1740, Recent Applications of Probability and Statistics. Near the end of the year, our professor ran a gradient descent contest."
+/>
+<p class="body">
+  Our goal was to start on a differntiable function at -2 in the x and
+  stochastically descend the curve, aiming to end up at the lowest point in the
+  function as often as possible. A run was 1,000,000 iterations 500,000 of those
+  being a burn in, where our program navigated (hopefully) to the lowest point
+  of the function. We then measured the percentage of the time that our function
+  was in the lowest valley in the last 500,000 iterations. We ran this process
+  50 times and recieved a mean success percentage of 88%, and a median success
+  percentage. Meaning 44 out of 50 of our runs ended up at the bottom of the
+  valley for 500,000/500,000 of the iterations. The other 6/50 of our runs ended
+  up getting stuck in another valley before reaching the lowest one. <br />
+  <br />
+  There is a game that people play at town fairs: you roll a bowling ball over a
+  little hill and try to get it stuck in the valley. This is rather similar; our
+  function dampens the distance traveled on each iteration and lowers randomized
+  step such that is is extremely likely (converges to 100% with infinite steps) that
+  we end up rolling into the deepest valley, without climbing up the other side.
+</p>
+<iframe
+  id="iframe"
+  src="https://drive.google.com/file/d/1pz7Y9LLLQZMg8E9pmsqfDvoBFDiRQinl/preview?zoom=150"
+  style="width: 100%; height: 100vh; border: none;"
+>
+</iframe>
+
+<style>
+  .body {
+    padding: 0rem 1rem 1rem 1rem;
+  }
+</style>

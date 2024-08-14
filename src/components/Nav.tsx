@@ -42,21 +42,33 @@ export default function Nav() {
         />
       </svg>
       <div>
-        <a href="/"> <img src="/Headshot.png" className="w-20 rounded-2xl" alt="ProfilePicture" /></a>
+        <a href="/">
+          {" "}
+          <img
+            src="/Headshot.png"
+            className="w-20 rounded-2xl"
+            alt="ProfilePicture"
+          />
+        </a>
       </div>
-      {/* Title */}
 
       <h1 className="text-lg font-bold absolute bottom-10 left-1/2 -translate-x-1/2">
-        <a href="/" className="text-black">Home</a>
+        <a href="/" className="text-black">
+          Home
+        </a>
       </h1>
 
-      {/* {Check if we're on mobile or not} */}
       {matches && (
         <div className="flex gap-12">
-          <a href="/" className="text-black">Home</a>
-          <a href="../interests" className="text-black">Interests</a>
-          <a href="../projects" className="text-black">Projects</a>
-          <a href="../contact" className="text-black">Contact</a>
+          <a href="../projects" className="text-black">
+            Projects
+          </a>
+          <a href="../interests" className="text-black">
+            Interests
+          </a>
+          <a href="../contact" className="text-black">
+            Contact
+          </a>
         </div>
       )}
 
@@ -92,13 +104,25 @@ export default function Nav() {
             initial="hidden"
             className="flex flex-col gap-24 text-lg"
           >
-            <motion.a variants={itemMotion} className="text-black" href="/">
-              Home
+            <motion.a
+              variants={itemMotion}
+              className="text-black"
+              href="../projects"
+            >
+              Projects
             </motion.a>
-            <motion.a variants={itemMotion} className="text-black" href="../interests">
+            <motion.a
+              variants={itemMotion}
+              className="text-black"
+              href="../interests"
+            >
               Interests
             </motion.a>
-            <motion.a variants={itemMotion} className="text-black" href="../contact">
+            <motion.a
+              variants={itemMotion}
+              className="text-black"
+              href="../contact"
+            >
               Contact
             </motion.a>
           </motion.div>
