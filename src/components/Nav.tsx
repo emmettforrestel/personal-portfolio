@@ -55,6 +55,7 @@ export default function Nav() {
         <div className="flex gap-12">
           <a href="/" className="text-black">Home</a>
           <a href="../interests" className="text-black">Interests</a>
+          <a href="../projects" className="text-black">Projects</a>
           <a href="../contact" className="text-black">Contact</a>
         </div>
       )}
