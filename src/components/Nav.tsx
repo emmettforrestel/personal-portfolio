@@ -66,6 +66,7 @@ export default function Nav() {
           <a href="../interests" className="text-black">
             Interests
           </a>
+
           <a href="../contact" className="text-black">
             Contact
           </a>
