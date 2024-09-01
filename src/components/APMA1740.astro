@@ -9,22 +9,30 @@ import ProjectHeader from "./projectHeader.astro";
   subtitle="In my freshman year, Dr. Stuart Geman was my professor in APMA 1740, Recent Applications of Probability and Statistics. Near the end of the year, our professor ran a gradient descent contest."
 />
 <p class="body">
-  Our goal was to start on a differntiable function at -2 in the x and 
-  stochastically descend the curve, aiming to end up at the lowest point in the
-  function as often as possible. A run was 1,000,000 iterations 500,000 of those
-  being a burn in, where our program navigated (hopefully) to the lowest point
-  of the function. We then measured the percentage of the time that our function
-  was in the lowest valley in the last 500,000 iterations. We ran this process
-  50 times and recieved a mean success percentage of 88%, and a median success
-  percentage. Meaning 44 out of 50 of our runs ended up at the bottom of the
-  valley for 500,000/500,000 of the iterations. The other 6/50 of our runs ended
-  up getting stuck in another valley before reaching the lowest one. <br />
+  Our goal was to start at x = -2 on the function: f(x) = 0.02*x +
+  25.6^(-8*(x+1)^2) + 50^(-12.5*x^2) - 86.4^(-18*(x-1)^2), and run a stochastic
+  gradient descent program to hit the local minimum at -1. We had 500,000
+  iterations of burn-in, and 500,000 iterations of testing. If our current x was
+  in the range (0.8, 1.2), it was counted as a success. Our descent function was
+  of the form Xn+1 = Xn - (theta * gradient) + sqrt(2*theta*temperature)*eta,
+  where eta is norm(0, 1), and we have to determine the optimal theta and
+  temperature. <br /><br />
+  We determined that both our temperature and theta parameters should be of the form
+  a*(1 - (1/b))^i, where i is the current iteration. We ran a threaded grid search
+  in C, searching for the optimal a and b for both theta and temperature (4 dimensional).
+  <br /><br />
+  After performing this search, our program ran the descent process 50 times and
+  recieved a mean success percentage of 88%, and a median success percentage of 100%.
+  Meaning 44 out of 50 of our runs ended up at the bottom of the valley for 500,000/500,000
+  of the iterations. The other 6/50 of our runs ended up getting stuck in another
+  valley before reaching the lowest one, meaning they were in the right spot 0/500,000
+  times.<br />
   <br />
-  There is a game that people play at town fairs: you roll a bowling ball over a
-  little hill and try to get it stuck in the valley. This is rather similar; our
-  function dampens the distance traveled on each iteration and lowers randomized
-  step such that is is extremely likely (converges to 100% with infinite steps) that
-  we end up rolling into the deepest valley, without climbing up the other side.
+  There is a game at town fairs: you roll a bowling ball over a little hill and try
+  to get it stuck in the valley. This program is similar: our function shrinks the
+  distance traveled on each iteration and dampens the randomized step such that is
+  is extremely likely (converges to 100% with infinite steps) that we end up rolling
+  into the deepest valley, without climbing up the other side.
 </p>
 <iframe
   id="iframe"
