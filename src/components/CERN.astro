@@ -1,0 +1,36 @@
+---
+import "../styles/fonts.css";
+import "../styles/global.css";
+import ProjectHeader from "./projectHeader.astro";
+---
+
+<ProjectHeader
+  title="Applied Physics CERN Research"
+  subtitle="In Summer 2025, I analyzed geometric distributions in the vertex detector of the Future Circular Electron-Poistron Collider, using the insight I garned to make a efficient classification/supression algorithm."
+/>
+<p class="body">
+    In Summer 2025, I worked at CERN as an Applied Physics Research Intern on the Future Circular Collider (FCC-ee). 
+    The FCC-ee is a proposed high-luminosity electron-positron collider designed to deliver unprecedented occupancies, particularly at the Z-pole. 
+    A cricial challenge for its vertex detector: achieving exceptional spatial resolution and fast readout while suppressing intense beam-induced background, especially in the very intense innermost layer.
+    <br /><br />
+    My research focused on the analysis and classification of hit clusters-groups of pixel hits deposited by single Monte Carlo particles. 
+    By studying their geometric features, I identified systematic effects from detector overlaps, characterized physics (Z→q¯q, muon) vs. beam-background clusters, and introduced algorithms that restore geometric consistency and isolate true physics signal from low-energy secondaries.
+    <br /><br />
+    Building on these features, I developed lightweight machine learning pipelines (XGBoost, SVM) under both conservative and optimistic readout assumptions. 
+    These classifiers achieved up to 99% signal retention with 91% background rejection (ROC AUC ≈ 0.997), demonstrating the feasibility of real-time suppression of beam background at the chip level. 
+    Such early filtering reduces readout rates and power consumption, extending detector lifespan and enabling passive cooling—critical requirements for next-generation colliders.
+    <br /><br />
+    This work established an initial framework for module-level background suppression in the FCC-ee vertex detector and laid the groundwork for future studies evaluating the impact on downstream physics observables and generalization to broader processes at the Z pole.
+</p>
+<iframe
+  id="iframe"
+  src="https://drive.google.com/file/d/13MBMoYinoICld48IpGOYaAYnNeFyhUTe/preview?zoom=150"
+  style="width: 100%; height: 100vh; border: none;"
+>
+</iframe>
+
+<style>
+  .body {
+    padding: 0rem 1rem 1rem 1rem;
+  }
+</style>
